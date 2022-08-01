@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi Hi</title>
+
+    <!-- calling js -->
+    <script type="text/javascript">
+        // variables
+        var greet = 'whatcha doing?';
+
+        // concatenation
+        var sentence = 'You just said "' + greet +'".'
+
+        // simple math
+        var result = 1+1;
+        var result2 = 2-1;
+        var result3 = 3*2;
+        var result4 = 4/3;
+        var result5 = (5+4-3)*2/6;
+        
+        // decision structure
+        // if else
+        var ageQ = prompt("Type your age.", "");
+        var age = ageQ;
+
+        if (age >= 18) {
+            sentence = "you're allow to play this game, because you're "+ age + ".";
+        } else if (age > 12 && age < 18) {
+            sentence = "you're not allow to play this game, but you can check the other.";
+        } else {
+            sentence = "you're just "+ age + ", go to bed!!";
+        }
+
+        // switch
+        gender = 'f';
+        switch (gender) {
+            case 'm':
+                sentence += ' || Male';
+                break;
+            case 'f':
+                sentence += ' || Female';
+                break;
+            default:
+                break;
+        }
+
+        // repetition structure
+        // while
+        var num = 0;
+        while (num < 5) {
+            // alert (num);
+            num += 1;
+        }
+
+        // for
+        for (var i = 0; i < 5; i++) {
+            // alert(i);
+        }
+
+        // arrays
+        var names = ["S", "Y", "B", "T", "K"];
+        for (var i = 0; i < names.length; i++) {
+            // alert (names[i]);
+        }
+
+        // functions
+        // function Messages () {
+        //     alert ('sup');
+        // }
+        // Messages ();
+
+        function Messages (sms) {
+            alert(sms);
+        }
+        Messages ('wasuuup!!');
+
+        function Add (a, b) {
+            sum = a + b;
+            return sum;
+        }
+        var c = Add (7, 5) + 8;
+        alert ('the result is ' + c);
+    </script>
+</head>
+<body>
+    <!-- if else -->
+    <button onclick="javascript:alert(sentence);">sentence</button> <br> <br>
+
+    <!-- basic math -->
+    <button onclick="javascript:alert(result);">+</button>
+    <button onclick="javascript:alert(result2);">-</button>
+    <button onclick="javascript:alert(result3);">*</button>
+    <button onclick="javascript:alert(result4);">/</button>
+    <button onclick="javascript:alert(result5);">+-*/</button>
+
+    <!-- function -->
+    <button onclick="Messages('wasuuuup!')">func</button>
+</body>
+</html>

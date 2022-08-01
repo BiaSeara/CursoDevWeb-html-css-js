@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button style="padding: 10px 30px; margin: 30% 43%; font-size: larger; background-color: navy; color: aliceblue; border-radius: 10px;">Alert</button>
+
+    <div id="content" style="color: aliceblue; text-align: center;"></div>
+
+    <script type="text/javascript">
+        
+        var btn = document.getElementsByTagName("button");
+
+        btn[0].addEventListener("click", ChangeColor);
+        btn[0].addEventListener("click", AddText);
+        
+        function ChangeColor() {
+            document.getElementsByTagName("body")[0].style.backgroundColor = "blue";
+        }
+        function AddText() {
+            document.getElementById("content").innerHTML = "Hellooooo";
+        }
+
+    </script>
+</body>
+</html>
