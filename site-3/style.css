@@ -37,6 +37,35 @@ nav a {
     padding: 15px 35px;
     text-decoration: none;
     font-size: 12px;
+    border: none;
+}
+
+/* modal */
+.modal {
+    display: none;
+    position: fixed;
+    background-color: #fff;
+    width: 400px;
+    height: 200px;
+    line-height: 160%;
+    top: 50%;
+    margin-top: -100px;
+    left: 50%;
+    margin-left: -200px;
+    padding: 25px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.modal a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+    float: right;
+    font-weight: bold;
+}
+.modal form input[type="text"] {
+    width: 100%;
+    margin-bottom: 13px;
 }
 
 /* section #1 */
@@ -151,7 +180,7 @@ nav a {
     width: 27%;
     display: inline-block;
 }
-.sec-fc input[type="text"], .sec-fc input[type="email"], textarea {
+.sec-fc input[type="text"], .modal input[type="text"], textarea {
     background-color: rgb(250, 250, 250);
     border: none;
     border-bottom: 1px solid rgb(187, 187, 187);
