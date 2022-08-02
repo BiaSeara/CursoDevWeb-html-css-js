@@ -46,7 +46,7 @@ nav a {
     position: fixed;
     background-color: #fff;
     width: 400px;
-    height: 200px;
+    min-height: 200px;
     line-height: 160%;
     top: 50%;
     margin-top: -100px;
@@ -65,7 +65,18 @@ nav a {
 }
 .modal form input[type="text"] {
     width: 100%;
-    margin-bottom: 13px;
+    margin-top: 13px;
+}
+span.nao-valido {
+    color: #f11c1c;
+    font-size: small;
+    display: none;
+}
+input.nao-valido, textearea.nao-valido {
+    border-bottom: 1px solid #f11c1c !important;
+}
+.modal .btn-destaque {
+    margin-top: 20px;
 }
 
 /* section #1 */
