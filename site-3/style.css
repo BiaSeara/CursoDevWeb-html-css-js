@@ -72,12 +72,10 @@ span.nao-valido {
     font-size: small;
     display: none;
 }
-input.nao-valido, textearea.nao-valido {
-    border-bottom: 1px solid #f11c1c !important;
-}
 .modal .btn-destaque {
     margin-top: 20px;
 }
+
 
 /* section #1 */
 .sec1 {
@@ -219,6 +217,15 @@ input.nao-valido, textearea.nao-valido {
 }
 .sec-fc .metade address {
     margin-top: 40px;
+}
+textarea.nao-valido, input.nao-valido {
+    border-bottom: 1px solid #f11c1c !important;
+}
+.texto {
+    float: right;
+    font-size: small;
+    line-height: 12px;
+    color: gray;
 }
 
 /* responsive */

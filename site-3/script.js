@@ -82,7 +82,22 @@ if (document.forms["form-cont"] != undefined) {
         if (!formValido) {
             evento.preventDefault();
         }
-    });
+    })
+
+    var inputs = document.querySelectorAll("form[name=form-cont] input[type=text");
+
+    textarea = document.querySelector("form[name=form-cont] textarea");
+
+    for (var i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener("keyup", function () {
+            this.className = "";
+        })
+    }
+
+    textarea.addEventListener("keyup", function () {
+        this.className = "";
+        document.querySelector(".texto").innerHTML = "Caracteres " + this.value.length;
+    })
 }
 
 
