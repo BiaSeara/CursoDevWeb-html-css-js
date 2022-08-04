@@ -34,6 +34,8 @@ $(document).ready(function(){
                 }
             }
         })
+
+        //DAQUI EM DIANTE É A PARTE COM PROVÁVEL ERRO
         function VerificarGanhador(){
             var vencedor = [
                 //LINHAS
