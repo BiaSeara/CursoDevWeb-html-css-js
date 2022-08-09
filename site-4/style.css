@@ -3,24 +3,23 @@
     padding: 0;
     font-family: sans-serif;
 }
-table {
+table, .config, #tempo {
     margin: auto;
     width: 560px;
     border: 1px solid gray;
     border-collapse: collapse;
 }
-table tr {
+table td {
     height: 160px;
     font-size: 100px;
     text-align: center;
-}
-table td {
     border: 2px solid gray;
     width: 160px;
 }
-.config {
+.config, #tempo {
     text-align: center;
     border: none;
+    margin-top: 5px;
 }
 .config input {
     padding: 10px;
@@ -38,9 +37,14 @@ table td {
     border: 1px outset gray;
     cursor: pointer;
 }
-#mensagem {
-    margin-bottom: 10px;
+.msg {
     color: red;
     font-size: small;
     font-weight: bold;
+    width: 550px;
+    padding: 10px;
+    background-color: #fafafa;
+    margin: 3px auto 10px auto;
+    height: 15px;
+    border: 1px solid gray;
 }

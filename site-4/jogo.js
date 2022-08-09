@@ -1,18 +1,22 @@
+let intervalo = null;
 $(document).ready(function(){
     //VALIDAÇÃO PARA INICIAR O JOGO
     $("#btn-iniciar").click(function(){
-        var jog1 = $("input[name=jog1]").val();
-        var jog2 = $("input[name=jog2]").val();
+        let jog1 = $("input[name=jog1]").val();
+        let jog2 = $("input[name=jog2]").val();
 
         if (jog1.trim().length > 0 && jog2.trim().length > 0) {
             // SE OS INPUTS NÃO ESTIVEREM VAZIOS, O JOGO COMEÇA
+            $('msg').text('');
             ComecarJogo();
         } else {
-            alert("Nome(s) não preenchidos.")
+            $('.msg').text("Nome(s) não preenchidos.")
         }
     })  
     function ComecarJogo() {
-        var contadorClicks = 0;
+        let contadorClicks = 0;
+
+        intervalo = setInterval(tempoDecorrido, 500);
 
         $("table td").click(function(){
             contadorClicks++;
@@ -30,14 +34,15 @@ $(document).ready(function(){
                     contadorClicks = 9;
                 }
                 if (contadorClicks == 9) {
-                    $("#mensagem").text("Jogo encerrado.")
+                    $('msg').append("<br/> Jogo encerrado.")
+                    clearInterval(intervalo);
                 }
             }
         })
 
         //DAQUI EM DIANTE É A PARTE COM PROVÁVEL ERRO
         function VerificarGanhador(){
-            var vencedor = [
+            let vencedor = [
                 //LINHAS
                 [0, 1, 2],
                 [3, 4, 5],
@@ -50,8 +55,10 @@ $(document).ready(function(){
                 [0, 4, 8],
                 [2, 4, 6]
             ];
-            var X = new Array(9);
-            var O = new Array(9);
+
+            let X = new Array[9];
+            let O = new Array[9];
+
             $("table td").each(function(key){
                 if ($(this).text() == "X") {
                     X[key] = key;
@@ -60,12 +67,15 @@ $(document).ready(function(){
                     O[key] = key;
                 }
             })
-
-            for (var i = 0; i < vencedor.length; i++) {
-               var contadorX = 0;
-               var contadorO = 0;
-
-                for (var j = 0; j < vencedor[1]; j++) {
+            return DefinirGanhador(X, O, vencedor);
+        }
+        
+        function DefinirGanhador() {
+            for (let i = 0; i < vencedor.length; i++) {
+                let contadorX = 0;
+                let contadorO = 0;
+ 
+                for (let j = 0; j < vencedor[i].length; j++) {
                     if (X[vencedor[i][j]] == vencedor[i][j]) {
                         contadorX++;
                     }
@@ -75,14 +85,33 @@ $(document).ready(function(){
                     vencedor[i][j]
                 }
                 if (contadorX == 3) {
-                    alert("X venceu");
+                    $('.msg').text('X - ' + jog1 + ' venceu a partida');
                     return true;
                 }
                 if (contadorO == 3) {
-                    alert("O venceu");
+                    $('.msg').text('O - ' + jog2 + ' venceu a partida');
                     return true;
                 }
             }
+        }
+        let inicioJogo = null; 
+        function tempoDecorrido(){
+            if(inicioJogo == null) {
+                inicioJogo = new Date();
+            }
+
+            let datAtual = new Date();
+            let secInicio = inicioJogo.getSeconds();
+            let secAtual = datAtual.getSeconds();
+            
+            let minInicial = inicioJogo.getMinutes();
+            let minAtual = datAtual.getMinutes();
+
+            let hInicio = inicioJogo.getHours();
+            let hAtual = datAtual.getHours();
+
+
+            $('#tempo').text('Início do jogo: '+hInicio+':'+minInicial+':'+secInicio+' - Hora atual: '+hAtual+':'+minAtual+':'+secAtual);
         }
     }
 })
